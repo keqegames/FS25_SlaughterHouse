@@ -76,7 +76,7 @@
     </triggerMarkers>
 
     <hotspots>
-        <hotspot type="PRODUCTION_POINT" linkNode="unloadTriggerMarker" teleportNode="unloadTriggerMarker" />
+        <hotspot type="PRODUCTION_POINT" linkNode="unloadTriggerMarker" teleportNode="playerTriggerMarker" />
     </hotspots>
 
     <lights>

@@ -268,16 +268,16 @@
         </Shape>
       </TransformGroup>
       <TransformGroup name="productionPoint" nodeId="139">
-        <Shape name="playerTrigger" translation="-13.7506 1.33133 -20.0164" shapeId="25" static="true" trigger="true" collisionFilterGroup="0x100000" collisionFilterMask="0x100000" nodeId="140" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="15">
+        <Shape name="playerTrigger" translation="-17.044 1.331 -17.272" shapeId="25" static="true" trigger="true" collisionFilterGroup="0x100000" collisionFilterMask="0x100000" nodeId="140" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="15">
           <TransformGroup name="playerTriggerMarker" nodeId="141"/>
         </Shape>
-        <TransformGroup name="playerTriggerMarker" translation="-13.7045 0.164 -19.896" nodeId="142"/>
+        <TransformGroup name="playerTriggerMarker" translation="-17.044 1.331 -17.272" nodeId="142"/>
         <Shape name="infoTrigger" translation="0.103327 -6.61259e-14 -14.6127" rotation="-180 -90 -180" shapeId="26" static="true" trigger="true" collisionFilterGroup="0x100000" collisionFilterMask="0x100000" nodeId="143" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="15"/>
-        <Shape name="animalTrigger" translation="-12.5087 1.12182 -22.5817" scale="2 1 2" shapeId="27" static="true" trigger="true" collisionFilterGroup="0x200000" collisionFilterMask="0x200000" nodeId="144" castsShadows="false" receiveShadows="false" nonRenderable="true" distanceBlending="false" materialIds="15"/>
-        <TransformGroup name="unloadTrigger" nodeId="145">
-          <Shape name="unloadTrigger" translation="-11.884 -0.196233 -21.147" scale="0.5 1 0.5" shapeId="28" static="true" trigger="true" collisionFilterGroup="0x40000000" collisionFilterMask="0x40000000" nodeId="146" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="15"/>
-          <TransformGroup name="unloadTriggerMarker" translation="-11.884 0.164 -21.147" nodeId="147"/>
-          <TransformGroup name="unloadTriggerAINode" translation="-11.884 0.164 -21.147" rotation="0 144.108 0" nodeId="148"/>
+        <Shape name="animalTrigger" translation="-11.9792 1.12182 -22.2454" scale="2 1 2" shapeId="27" static="true" trigger="true" collisionFilterGroup="0x200000" collisionFilterMask="0x200000" nodeId="144" castsShadows="false" receiveShadows="false" nonRenderable="true" distanceBlending="false" materialIds="15"/>
+        <TransformGroup name="unloadTrigger" translation="-11.884 0.164 -21.147" nodeId="145">
+          <Shape name="unloadTrigger" translation="0.116 0.164 -0.132023" scale="0.5 1 0.5" shapeId="28" static="true" trigger="true" collisionFilterGroup="0x40000000" collisionFilterMask="0x40000000" nodeId="146" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="15"/>
+          <TransformGroup name="unloadTriggerMarker" translation="0.116 0.164 -0.146999" nodeId="147"/>
+          <TransformGroup name="unloadTriggerAINode" translation="0.197267 -0.836 0.215565" rotation="-180 0.89209 -180" nodeId="148"/>
         </TransformGroup>
         <TransformGroup name="palletSpawner" translation="0 0 -33.4814" nodeId="149">
           <TransformGroup name="spawnSpace1start" translation="13.7301 0 12.3722" nodeId="150">
