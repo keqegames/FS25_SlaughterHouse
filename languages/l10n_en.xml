@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+	<texts>
+===============================================================
+		<!--New Shop Item Names & Functions-->
+		<text name="shopItem_Butcher"                      text="Butcher's"/>
+		<text name="function_Butcher"                      text="In the butcher shop, cows, pigs, sheep, chickens and horses can be processed into beef, pork, mutton, chicken and horse meat."/>
+===============================================================
+		<!--New fillTypes-->
+		<text name="fillType_cows"                         text="Cows"/>
+		<text name="fillType_pigs"                         text="Pigs"/>
+		<text name="fillType_sheeps"                       text="Sheeps"/>
+		<text name="fillType_chickens"                     text="Chickens"/>
+		<text name="fillType_horses"                       text="Horses"/>
+		
+		<text name="fillType_beefMeat"                     text="Beef"/>
+		<text name="fillType_porkMeat"                     text="Pork meat"/>
+		<text name="fillType_sheepMeat"                    text="Sheep meat"/>
+		<text name="fillType_chickenMeat"                  text="Chicken meat"/>
+		<text name="fillType_horseMeat"                    text="Horse meat"/>
+===============================================================
+		<!--New Pallets-->	
+		<text name="storeItem_beefMeatPallet"              text="Beef palette"/>
+		<text name="storeItem_porkMeatPallet"              text="Pork meat palette"/>
+		<text name="storeItem_sheepMeatPallet"             text="Sheep meat palette"/>
+		<text name="storeItem_chickenMeatPallet"           text="Chicken palette"/>
+		<text name="storeItem_horseMeatPallet"             text="Horse meat Palette"/>
+===============================================================	
+	</texts>
+</l10n>

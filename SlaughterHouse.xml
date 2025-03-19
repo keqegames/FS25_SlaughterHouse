@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<placeable type="productionPoint" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../shared/xml/schema/placeable.xsd">
+    <storeData>
+        <name>$l10n_shopItem_Butcher</name>
+        <functions>
+            <function>$l10n_function_Butcher</function>
+        </functions>
+        <image>textures/store_Butcher.dds</image>
+        <price>179000</price>
+		<dailyUpkeep>179</dailyUpkeep>
+		<canBeSold>true</canBeSold>
+		<showInStore>true</showInStore>
+        <lifetime>1000</lifetime>
+        <rotation>0</rotation>
+        <brand>LIZARD</brand>
+        <species>placeable</species>
+        <category>productionPoints</category>
+        <brush>
+            <type>placeable</type>
+            <category>production</category>
+            <tab>factories</tab>
+        </brush>
+        <vertexBufferMemoryUsage>1013760</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>161792</indexBufferMemoryUsage>
+        <textureMemoryUsage>9764864</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+        <audioMemoryUsage>0</audioMemoryUsage>
+    </storeData>
+
+    <base>
+        <filename>SlaughterHouse.i3d</filename>
+        <canBeRenamed>true</canBeRenamed>
+    </base>
+
+    <placement useRandomYRotation="false" useManualYRotation="true" >
+        <testAreas>
+            <testArea startNode="testArea1Start" endNode="testArea1End" />
+        </testAreas>
+
+        <sounds>
+            <place template="smallImp" />
+        </sounds>
+    </placement>
+
+    <clearAreas>
+        <clearArea startNode="clearArea1Start" widthNode="clearArea1Width" heightNode="clearArea1Height"/>
+    </clearAreas>
+
+    <leveling requireLeveling="true" maxSmoothDistance="10" maxSlope="75" maxEdgeAngle="30" >
+        <levelAreas>
+            <levelArea startNode="levelArea1Start" widthNode="levelArea1Width" heightNode="levelArea1Height" groundType="asphalt"/>
+        </levelAreas>
+    </leveling>
+	
+	<indoorAreas>
+        <indoorArea startNode="indoorArea1Start" widthNode="indoorArea1Width" heightNode="indoorArea1Height" />
+    </indoorAreas>
+
+    <tipOcclusionUpdateAreas>
+        <tipOcclusionUpdateArea startNode="tipOcclusionUpdateArea1Start" endNode="tipOcclusionUpdateArea1End" />
+    </tipOcclusionUpdateAreas>
+
+    <ai>
+        <updateAreas>
+            <updateArea startNode="tipOcclusionUpdateArea1Start" endNode="tipOcclusionUpdateArea1End" />
+        </updateAreas>
+    </ai>
+
+    <infoTrigger triggerNode="infoTrigger" />
+
+    <triggerMarkers>
+        <triggerMarker node="warningStripes" />
+        <triggerMarker node="playerTriggerMarker" filename="$data/shared/assets/marker/markerIconWrench.i3d" id="WRENCH" adjustToGround="true" />
+        <triggerMarker node="unloadTriggerMarker" filename="$data/shared/assets/marker/markerIconUnload.i3d" id="UNLOAD" adjustToGround="true" />
+    </triggerMarkers>
+
+    <hotspots>
+        <hotspot type="PRODUCTION_POINT" linkNode="unloadTriggerMarker" teleportNode="unloadTriggerMarker" />
+    </hotspots>
+
+    <lights>
+        <group weatherRequiredFlags="NIGHT" />
+    </lights>
+
+    <productionPoint>
+        <productions sharedThroughputCapacity="false">
+            <production id="Rindfleisch" name="$l10n_fillType_beefMeat" mode="hourly" startHour="7" endHour="19" cyclesPerHour="1" costsPerActiveHour="17">
+                <inputs>
+					<input fillType="COWS" amount="400" mix="1" />
+				</inputs>
+				<outputs>
+                    <output fillType="BEEFMEAT" amount="300" />
+				</outputs>
+            </production>
+			
+			<production id="Schweinefleisch" name="$l10n_fillType_porkMeat" mode="hourly" startHour="7" endHour="19" cyclesPerHour="1" costsPerActiveHour="17">
+                <inputs>
+					<input fillType="PIGS" amount="600" mix="1" />
+				</inputs>
+				<outputs>
+                    <output fillType="PORKMEAT" amount="450" />
+				</outputs>
+            </production>
+			
+			<production id="Schafsfleisch" name="$l10n_fillType_sheepMeat" mode="hourly" startHour="7" endHour="19" cyclesPerHour="1" costsPerActiveHour="17">
+                <inputs>
+					<input fillType="SHEEPS" amount="400" mix="1" />
+				</inputs>
+				<outputs>
+                    <output fillType="SHEEPMEAT" amount="300" />
+				</outputs>
+            </production>
+			
+			<production id="Hühnerfleisch" name="$l10n_fillType_chickenMeat" mode="hourly" startHour="7" endHour="19" cyclesPerHour="1" costsPerActiveHour="17">
+                <inputs>
+					<input fillType="CHICKENS" amount="500" mix="1" />
+				</inputs>
+				<outputs>
+                    <output fillType="CHICKENMEAT" amount="375" />
+				</outputs>
+            </production>
+			
+			<production id="Pferdefleisch" name="$l10n_fillType_horseMeat" mode="hourly" startHour="7" endHour="19" cyclesPerHour="1" costsPerActiveHour="17">
+                <inputs>
+					<input fillType="HORSES" amount="400" mix="1" />
+				</inputs>
+				<outputs>
+                    <output fillType="HORSEMEAT" amount="300" />
+				</outputs>
+            </production>
+        </productions>
+		
+		<animalTrigger triggerNode="animalTrigger">
+			<inputs>
+				<input animalSubType="COW_HOLSTEIN" inputFillType="COWS" minHealthFactor="75" maxHealthFactor="100" minAgeMonth="0" maxAgeMonth="48" dynamicWeight="true" triggerNode="animalTrigger">
+					<weight ageMonth="0" value="0" />
+					<weight ageMonth="1" value="16" />
+					<weight ageMonth="6" value="100" />
+					<weight ageMonth="12" value="300" />
+					<weight ageMonth="18" value="600" />
+				</input>
+				<input animalSubType="COW_SWISS_BROWN" inputFillType="COWS" minHealthFactor="75" maxHealthFactor="100" minAgeMonth="0" maxAgeMonth="48" dynamicWeight="true" triggerNode="animalTrigger">
+					<weight ageMonth="0" value="0" />
+					<weight ageMonth="1" value="16" />
+					<weight ageMonth="6" value="100" />
+					<weight ageMonth="12" value="300" />
+					<weight ageMonth="18" value="600" />
+				</input>
+				<input animalSubType="COW_ANGUS" inputFillType="COWS" minHealthFactor="75" maxHealthFactor="100" minAgeMonth="0" maxAgeMonth="48" dynamicWeight="true" triggerNode="animalTrigger">
+					<weight ageMonth="0" value="0" />
+					<weight ageMonth="1" value="50" />
+					<weight ageMonth="6" value="300" />
+					<weight ageMonth="12" value="600" />
+					<weight ageMonth="18" value="1200" />
+				</input>
+				<input animalSubType="COW_LIMOUSIN" inputFillType="COWS" minHealthFactor="75" maxHealthFactor="100" minAgeMonth="0" maxAgeMonth="48" dynamicWeight="true" triggerNode="animalTrigger">
+					<weight ageMonth="0" value="0" />
+					<weight ageMonth="1" value="50" />
+					<weight ageMonth="6" value="300" />
+					<weight ageMonth="12" value="600" />
+					<weight ageMonth="18" value="1200" />
+				</input>
+				
+				<input animalSubType="PIG_LANDRACE" inputFillType="PIGS" minHealthFactor="75" maxHealthFactor="100" minAgeMonth="0" maxAgeMonth="22" dynamicWeight="true" triggerNode="animalTrigger">
+					<weight ageMonth="0" value="0" />
+					<weight ageMonth="1" value="12" />
+					<weight ageMonth="6" value="75" />
+					<weight ageMonth="12" value="150" />
+					<weight ageMonth="18" value="300" />
+				</input>
+				<input animalSubType="PIG_BLACK_PIED" inputFillType="PIGS" minHealthFactor="75" maxHealthFactor="100" minAgeMonth="0" maxAgeMonth="22" dynamicWeight="true" triggerNode="animalTrigger">
+					<weight ageMonth="0" value="0" />
+					<weight ageMonth="1" value="12" />
+					<weight ageMonth="6" value="75" />
+					<weight ageMonth="12" value="150" />
+					<weight ageMonth="18" value="300" />
+				</input>
+				<input animalSubType="PIG_BERKSHIRE" inputFillType="PIGS" minHealthFactor="75" maxHealthFactor="100" minAgeMonth="0" maxAgeMonth="22" dynamicWeight="true" triggerNode="animalTrigger">
+					<weight ageMonth="0" value="0" />
+					<weight ageMonth="1" value="12" />
+					<weight ageMonth="6" value="75" />
+					<weight ageMonth="12" value="150" />
+					<weight ageMonth="18" value="300" />
+				</input>
+				
+				<input animalSubType="SHEEP_LANDRACE" inputFillType="SHEEPS" minHealthFactor="75" maxHealthFactor="100" minAgeMonth="0" maxAgeMonth="28" dynamicWeight="true" triggerNode="animalTrigger">
+					<weight ageMonth="0" value="0" />
+					<weight ageMonth="1" value="8" />
+					<weight ageMonth="6" value="50" />
+					<weight ageMonth="12" value="100" />
+					<weight ageMonth="18" value="200" />
+				</input>
+				<input animalSubType="SHEEP_SWISS_MOUNTAIN" inputFillType="SHEEPS" minHealthFactor="75" maxHealthFactor="100" minAgeMonth="0" maxAgeMonth="28" dynamicWeight="true" triggerNode="animalTrigger">
+					<weight ageMonth="0" value="0" />
+					<weight ageMonth="1" value="8" />
+					<weight ageMonth="6" value="50" />
+					<weight ageMonth="12" value="100" />
+					<weight ageMonth="18" value="200" />
+				</input>
+				<input animalSubType="SHEEP_STEINSCHAF" inputFillType="SHEEPS" minHealthFactor="75" maxHealthFactor="100" minAgeMonth="0" maxAgeMonth="28" dynamicWeight="true" triggerNode="animalTrigger">
+					<weight ageMonth="0" value="0" />
+					<weight ageMonth="1" value="8" />
+					<weight ageMonth="6" value="50" />
+					<weight ageMonth="12" value="100" />
+					<weight ageMonth="18" value="200" />
+				</input>
+				<input animalSubType="SHEEP_BLACK_WELSH" inputFillType="SHEEPS" minHealthFactor="75" maxHealthFactor="100" minAgeMonth="0" maxAgeMonth="28" dynamicWeight="true" triggerNode="animalTrigger">
+					<weight ageMonth="0" value="0" />
+					<weight ageMonth="1" value="8" />
+					<weight ageMonth="6" value="50" />
+					<weight ageMonth="12" value="100" />
+					<weight ageMonth="18" value="200" />
+				</input>
+				
+				<input animalSubType="CHICKEN" inputFillType="CHICKENS" minHealthFactor="75" maxHealthFactor="100" minAgeMonth="0" maxAgeMonth="20" dynamicWeight="true" triggerNode="animalTrigger">
+					<weight ageMonth="0" value="0" />
+					<weight ageMonth="1" value="4" />
+					<weight ageMonth="6" value="25" />
+					<weight ageMonth="12" value="50" />
+					<weight ageMonth="18" value="100" />
+				</input>
+				<input animalSubType="CHICKEN_ROOSTER" inputFillType="CHICKENS" minHealthFactor="75" maxHealthFactor="100" minAgeMonth="0" maxAgeMonth="20" dynamicWeight="true" triggerNode="animalTrigger">
+					<weight ageMonth="0" value="0" />
+					<weight ageMonth="1" value="4" />
+					<weight ageMonth="6" value="25" />
+					<weight ageMonth="12" value="50" />
+					<weight ageMonth="18" value="100" />
+				</input>
+				
+				<input animalSubType="HORSE_PALOMINO" inputFillType="HORSES" minHealthFactor="75" maxHealthFactor="100" minAgeMonth="0" maxAgeMonth="48" dynamicWeight="true" triggerNode="animalTrigger">
+					<weight ageMonth="0" value="0" />
+					<weight ageMonth="1" value="16" />
+					<weight ageMonth="6" value="100" />
+					<weight ageMonth="12" value="300" />
+					<weight ageMonth="18" value="600" />
+				</input>
+				<input animalSubType="HORSE_BLACK" inputFillType="HORSES" minHealthFactor="75" maxHealthFactor="100" minAgeMonth="0" maxAgeMonth="48" dynamicWeight="true" triggerNode="animalTrigger">
+					<weight ageMonth="0" value="0" />
+					<weight ageMonth="1" value="16" />
+					<weight ageMonth="6" value="100" />
+					<weight ageMonth="12" value="300" />
+					<weight ageMonth="18" value="600" />
+				</input>
+				<input animalSubType="HORSE_BAY" inputFillType="HORSES" minHealthFactor="75" maxHealthFactor="100" minAgeMonth="0" maxAgeMonth="48" dynamicWeight="true" triggerNode="animalTrigger">
+					<weight ageMonth="0" value="0" />
+					<weight ageMonth="1" value="16" />
+					<weight ageMonth="6" value="100" />
+					<weight ageMonth="12" value="300" />
+					<weight ageMonth="18" value="600" />
+				</input>
+				<input animalSubType="HORSE_PINTO" inputFillType="HORSES" minHealthFactor="75" maxHealthFactor="100" minAgeMonth="0" maxAgeMonth="48" dynamicWeight="true" triggerNode="animalTrigger">
+					<weight ageMonth="0" value="0" />
+					<weight ageMonth="1" value="16" />
+					<weight ageMonth="6" value="100" />
+					<weight ageMonth="12" value="300" />
+					<weight ageMonth="18" value="600" />
+				</input>
+				<input animalSubType="HORSE_SEAL_BROWN" inputFillType="HORSES" minHealthFactor="75" maxHealthFactor="100" minAgeMonth="0" maxAgeMonth="48" dynamicWeight="true" triggerNode="animalTrigger">
+					<weight ageMonth="0" value="0" />
+					<weight ageMonth="1" value="16" />
+					<weight ageMonth="6" value="100" />
+					<weight ageMonth="12" value="300" />
+					<weight ageMonth="18" value="600" />
+				</input>
+				<input animalSubType="HORSE_GRAY" inputFillType="HORSES" minHealthFactor="75" maxHealthFactor="100" minAgeMonth="0" maxAgeMonth="48" dynamicWeight="true" triggerNode="animalTrigger">
+					<weight ageMonth="0" value="0" />
+					<weight ageMonth="1" value="16" />
+					<weight ageMonth="6" value="100" />
+					<weight ageMonth="12" value="300" />
+					<weight ageMonth="18" value="600" />
+				</input>
+				<input animalSubType="HORSE_DUN" inputFillType="HORSES" minHealthFactor="75" maxHealthFactor="100" minAgeMonth="0" maxAgeMonth="48" dynamicWeight="true" triggerNode="animalTrigger">
+					<weight ageMonth="0" value="0" />
+					<weight ageMonth="1" value="16" />
+					<weight ageMonth="6" value="100" />
+					<weight ageMonth="12" value="300" />
+					<weight ageMonth="18" value="600" />
+				</input>
+				<input animalSubType="HORSE_CHESTNUT" inputFillType="HORSES" minHealthFactor="75" maxHealthFactor="100" minAgeMonth="0" maxAgeMonth="48" dynamicWeight="true" triggerNode="animalTrigger">
+					<weight ageMonth="0" value="0" />
+					<weight ageMonth="1" value="16" />
+					<weight ageMonth="6" value="100" />
+					<weight ageMonth="12" value="300" />
+					<weight ageMonth="18" value="600" />
+				</input>
+			</inputs>
+		</animalTrigger>
+	
+        <storage isExtension="false" fillLevelSyncThreshold="50">
+            <capacity fillType="COWS"     capacity="50000" />
+			<capacity fillType="PIGS"     capacity="50000" />
+			<capacity fillType="SHEEPS"     capacity="50000" />
+			<capacity fillType="CHICKENS"     capacity="50000" />
+			<capacity fillType="HORSES"     capacity="50000" />
+			
+			<capacity fillType="BEEFMEAT"       capacity="100000" />
+			<capacity fillType="PORKMEAT"       capacity="100000" />
+			<capacity fillType="SHEEPMEAT"       capacity="100000" />
+			<capacity fillType="CHICKENMEAT"       capacity="100000" />
+			<capacity fillType="HORSEMEAT"       capacity="100000" />
+        </storage>
+
+        <sellingStation node="sellingStation" supportsExtension="false" hideFromPricesMenu="true" allowMissions="false">
+            <unloadTrigger exactFillRootNode="unloadTrigger" aiNode="unloadTriggerAINode" fillTypes="COWS PIGS SHEEPS CHICKENS HORSES"/>
+        </sellingStation>
+
+        <palletSpawner node="palletSpawner">
+            <spawnPlaces>
+                <spawnPlace startNode="spawnSpace1start" />
+            </spawnPlaces>
+        </palletSpawner>
+
+        <playerTrigger node="playerTrigger" />
+
+        <sounds>
+            <idle template="oilPlantIdle" linkNode="0>" />
+            <active template="oilPlantWork" linkNode="0>" />
+        </sounds>
+    </productionPoint>
+
+    <i3dMappings>
+		<i3dMapping id="clearArea1Start" node="0>0|0" />
+        <i3dMapping id="clearArea1Width" node="0>0|0|0" />
+        <i3dMapping id="clearArea1Height" node="0>0|0|1" />
+		
+        <i3dMapping id="levelArea1Start" node="0>1|0" />
+        <i3dMapping id="levelArea1Width" node="0>1|0|0" />
+        <i3dMapping id="levelArea1Height" node="0>1|0|1" />
+		
+		<i3dMapping id="indoorArea1Start" node="0>2|0" />
+        <i3dMapping id="indoorArea1Width" node="0>2|0|0" />
+        <i3dMapping id="indoorArea1Height" node="0>2|0|1" />
+        
+        <i3dMapping id="testArea1Start" node="0>3|0" />
+        <i3dMapping id="testArea1End" node="0>3|0|0" />
+
+        <i3dMapping id="tipOcclusionUpdateArea1Start" node="0>4|0" />
+        <i3dMapping id="tipOcclusionUpdateArea1End" node="0>4|0|0" />
+		
+		<i3dMapping id="playerTrigger" node="0>8|0" />
+		<i3dMapping id="playerTriggerMarker" node="0>8|1" />
+		
+        <i3dMapping id="infoTrigger" node="0>8|2" />
+
+		<i3dMapping id="animalTrigger" node="0>8|3" />
+		
+        <i3dMapping id="unloadTrigger" node="0>8|4|0" />
+        <i3dMapping id="unloadTriggerMarker" node="0>8|4|1" />
+        <i3dMapping id="unloadTriggerAINode" node="0>8|4|2" />
+
+        <i3dMapping id="palletSpawner" node="0>8|5" />
+        <i3dMapping id="spawnSpace1start" node="0>8|5|0" />
+		
+        <i3dMapping id="warningStripes" node="0>8|6" />
+    </i3dMappings>
+</placeable>

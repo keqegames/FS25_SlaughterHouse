@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+	<texts>
+===============================================================
+		<!--New Shop Item Names & Functions-->
+		<text name="shopItem_Butcher"                      text="Fleischerei"/>
+		<text name="function_Butcher"                      text="In der Fleischerei können Kühe, Schweine, Schafe, Hühner und Pferde zu Rindfleisch, Schweinefleisch, Schafsfleisch, Hühnerfleisch und Pferdefleisch verarbeitet werden."/>
+===============================================================
+		<!--New fillTypes-->
+		<text name="fillType_cows"                         text="Kühe"/>
+		<text name="fillType_pigs"                         text="Schweine"/>
+		<text name="fillType_sheeps"                       text="Schafe"/>
+		<text name="fillType_chickens"                     text="Hühner"/>
+		<text name="fillType_horses"                       text="Pferde"/>
+		
+		<text name="fillType_beefMeat"                     text="Rindfleisch"/>
+		<text name="fillType_porkMeat"                     text="Schweinefleisch"/>
+		<text name="fillType_sheepMeat"                    text="Schafsfleisch"/>
+		<text name="fillType_chickenMeat"                  text="Hühnerfleisch"/>
+		<text name="fillType_horseMeat"                    text="Pferdefleisch"/>
+===============================================================
+		<!--New Pallets-->	
+		<text name="storeItem_beefMeatPallet"              text="Rindfleisch Palette"/>
+		<text name="storeItem_porkMeatPallet"              text="Schweinefleisch Palette"/>
+		<text name="storeItem_sheepMeatPallet"             text="Schafsfleisch Palette"/>
+		<text name="storeItem_chickenMeatPallet"           text="Hühnerfleisch Palette"/>
+		<text name="storeItem_horseMeatPallet"             text="Pferdefleisch Palette"/>
+===============================================================	
+	</texts>
+</l10n>

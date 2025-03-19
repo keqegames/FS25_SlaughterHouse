@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="94">
+    <author>keqegames</author>
+    <version>1.0.0.0</version>
+===============================================================
+    <title>
+        <br>Abatedouro</br>
+        <en>Butcher</en>
+    </title>
+===============================================================
+	<description>
+		<br><![CDATA[O Abatedouro processa vacas, porcos, ovelhas, galinhas e cavalos em carne.
+ Com a ajuda de transportadores de animais, a produção pode ser fornecida via animalTrigger.
+ Esse recurso foi adicionado por meio do Production Revamp.
+ Uma reformulação da produção é absolutamente necessária.
+ Os animais entregues são convertidos em um novo tipo de enchimento e creditados à produção.
+ Vacas, porcos, ovelhas, galinhas e cavalos só podem ser processados ​​se estiverem com mais de 75% de saúde.
+ Além disso, o Abatedouro só abre a partir das 7h. até às 19:00 horas.
+ - Preço: € 179.000
+ - Manutenção diária: €179
+ - Ciclos por hora: 1
+ - Custo: € 17 por hora
+		]]></br>
+		<en><![CDATA[The butcher shop processes cows, pigs, sheep, chickens and horses into meat.
+		With the help of animal transporters, production can be supplied via the animalTrigger. 
+		This feature was added through Production Revamp. 
+		Production revamp is absolutely necessary.
+		The animals delivered are converted into a new fillType and credited to production.
+		Cows, pigs, sheep, chickens and horses can only be processed if they have a health of over 75%.
+		In addition, the butcher shop is only open from 7:00 a.m. to 7:00 p.m. 
+		- Price: €179,000
+		- Daily maintenance: €179
+		- Cycles per hour: 1
+		- Cost: €17 per hour
+		]]></en>
+    </description>
+===============================================================
+    <iconFilename>icon.dds</iconFilename>
+===============================================================
+    <multiplayer supported="true" />
+===============================================================
+    <storeItems>
+		<!--New Shop Items-->
+		<storeItem xmlFilename="SlaughterHouse.xml"/>
+===============================================================	
+		<!--New fillTypes Pallets-->	
+		<storeItem xmlFilename="fillTypes/pallets/beefMeatPallet/beefMeatPallet.xml"/>
+		<storeItem xmlFilename="fillTypes/pallets/porkMeatPallet/porkMeatPallet.xml"/>
+		<storeItem xmlFilename="fillTypes/pallets/sheepMeatPallet/sheepMeatPallet.xml"/>
+		<storeItem xmlFilename="fillTypes/pallets/chickenMeatPallet/chickenMeatPallet.xml"/>
+		<storeItem xmlFilename="fillTypes/pallets/horseMeatPallet/horseMeatPallet.xml"/>
+    </storeItems>
+===============================================================
+	<fillTypes filename="fillTypes/fillTypes.xml" />
+===============================================================
+	<!-- <extraSourceFiles>
+		<sourceFile filename="scripts/revamp_check.lua"/>
+    </extraSourceFiles>
+	
+	<revamp minVersion="1.4.3.0">
+		<sellFillType base="BUTTER" fillType="BEEFMEAT"/>
+		<sellFillType base="BUTTER" fillType="PORKMEAT"/>
+		<sellFillType base="BUTTER" fillType="SHEEPMEAT"/>
+		<sellFillType base="BUTTER" fillType="CHICKENMEAT"/>
+		<sellFillType base="BUTTER" fillType="HORSEMEAT"/>
+	</revamp> -->
+===============================================================
+	<l10n filenamePrefix="languages/l10n"/>
+===============================================================	
+	<!-- <dependencies>
+        <dependency>FS22_A_ProductionRevamp</dependency>
+    </dependencies> -->
+===============================================================
+	<!-- 
+	Credits © 
+	Huds by Forgotten Plants - Eribus
+	-->
+===============================================================
+</modDesc>
