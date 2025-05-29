@@ -1,30 +1,33 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <l10n>
-	<texts>
-===============================================================
-		<!--New Shop Item Names & Functions-->
-		<text name="shopItem_Butcher"                      text="Butcher's"/>
-		<text name="function_Butcher"                      text="In the butcher shop, cows, pigs, sheep, chickens and horses can be processed into beef, pork, mutton, chicken and horse meat."/>
-===============================================================
-		<!--New fillTypes-->
-		<text name="fillType_cows"                         text="Cows"/>
-		<text name="fillType_pigs"                         text="Pigs"/>
-		<text name="fillType_sheeps"                       text="Sheeps"/>
-		<text name="fillType_chickens"                     text="Chickens"/>
-		<text name="fillType_horses"                       text="Horses"/>
+    <texts>
+        <!--New Shop Item Names & Functions-->
+        <text name="shopItem_Butcher" text="Butcher Shop"/>
+        <text name="function_Butcher" text="In the butcher shop, cows, pigs, sheep/goat, and chickens can be processed into beef, pork, sheep/goat, chicken meat."/>
+        <!--New fillTypes-->
+        <text name="fillType_beef" text="Cattle" />
+		<text name="fillType_pork" text="Pigs" />
+		<text name="fillType_poultry" text="Poultry" />
+		<text name="fillType_sheepGoat" text="Sheep/Goats" />
+        
+        <text name="fillType_porkMeat" text="Pork" />			
+		<text name="fillType_beefMeat" text="Beef" />			
+		<text name="fillType_poultryMeat" text="Poultry Meat" />			
+		<text name="fillType_sheepGoatMeat" text="Sheep/Goat Meat" />
+        <!--New Pallets-->    
+        <text name="storeItem_beefMeatPallet" text="Beef pallet"/>
+        <text name="storeItem_porkMeatPallet" text="Pork meat pallet"/>
+        <text name="storeItem_sheepMeatPallet" text="Sheep/Goat meat pallet"/>
+        <text name="storeItem_chickenMeatPallet" text="Chicken pallet"/>
 		
-		<text name="fillType_beefMeat"                     text="Beef"/>
-		<text name="fillType_porkMeat"                     text="Pork meat"/>
-		<text name="fillType_sheepMeat"                    text="Sheep meat"/>
-		<text name="fillType_chickenMeat"                  text="Chicken meat"/>
-		<text name="fillType_horseMeat"                    text="Horse meat"/>
-===============================================================
-		<!--New Pallets-->	
-		<text name="storeItem_beefMeatPallet"              text="Beef palette"/>
-		<text name="storeItem_porkMeatPallet"              text="Pork meat palette"/>
-		<text name="storeItem_sheepMeatPallet"             text="Sheep meat palette"/>
-		<text name="storeItem_chickenMeatPallet"           text="Chicken palette"/>
-		<text name="storeItem_horseMeatPallet"             text="Horse meat Palette"/>
-===============================================================	
-	</texts>
+		<text name="message_unloadAnimalSuccess" text="Animals were successfully moved to %s!" />
+        <text name="message_unloadAnimalConfirmation" text="Do you want to move %d animals (%s) to the %s?" />
+        <text name="button_moveAnimal" text="Move to %s" />
+
+         <!-- Only required when a 'minimumAge' is set as part of the </animalInput> -->
+        <text name="message_animalTooYoung" text="This animal is too young." />
+
+        <!-- Only required when a 'maximumAge' is set as part of the </animalInput> -->
+        <text name="message_animalTooOld" text="This animal is too old." />
+    </texts>
 </l10n>

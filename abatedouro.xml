@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<placeable type="extendedProductionPoint" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com/xml/fs25/placeable.xsd">
+    <storeData>
+        <name>
+            <en>Butcher Shop</en>
+		</name>
+        <functions>
+            <function>$l10n_function_Butcher</function>
+        </functions>
+        <image>store_Butcher.dds</image>
+        <price>179000</price>
+        <dailyUpkeep>179</dailyUpkeep>
+        <canBeSold>true</canBeSold>
+        <showInStore>true</showInStore>
+        <lifetime>1000</lifetime>
+        <rotation>0</rotation>
+        <brand>LIZARD</brand>
+        <species>PLACEABLE</species>
+        <category>productionPoints</category>
+        <brush>
+            <type>placeable</type>
+            <category>production</category>
+            <tab>factories</tab>
+        </brush>
+    </storeData>
+    <base>
+        <filename>abatedouro.i3d</filename>
+        <canBeRenamed>true</canBeRenamed>
+		<boughtWithFarmland>true</boughtWithFarmland>
+    </base>
+    <placement useRandomYRotation="false" useManualYRotation="true">
+        <testAreas>
+            <testArea startNode="testAreaStart" endNode="testAreaEnd"/>
+        </testAreas>
+        <sounds>
+            <place template="smallImp"/>
+        </sounds>
+    </placement>
+    <clearAreas>
+        <clearArea startNode="clearAreaStart" widthNode="clearAreaWidth" heightNode="clearAreaHeight"/>
+    </clearAreas>
+    <leveling requireLeveling="true" maxSmoothDistance="10" maxSlope="75" maxEdgeAngle="30">
+        <levelAreas>
+            <levelArea startNode="levelAreaStart" widthNode="levelAreaWidth" heightNode="levelAreaHeight" groundType="asphalt"/>
+        </levelAreas>
+    </leveling>
+    <indoorAreas>
+        <indoorArea startNode="indoorAreaStart" widthNode="indoorAreaWidth" heightNode="indoorAreaHeight"/>
+    </indoorAreas>
+    <tipOcclusionUpdateAreas>
+        <tipOcclusionUpdateArea startNode="tipOcclusionUpdateAreaStart" endNode="tipOcclusionUpdateAreaEnd"/>
+    </tipOcclusionUpdateAreas>
+    <ai>
+        <updateAreas>
+            <updateArea startNode="tipOcclusionUpdateAreaStart" endNode="tipOcclusionUpdateAreaEnd"/>
+        </updateAreas>
+    </ai>
+    <infoTrigger triggerNode="infoTrigger"/>
+    <triggerMarkers>
+        <triggerMarker node="warningStripes"/>
+        <triggerMarker node="playerTriggerMarker" filename="$data/shared/assets/marker/markerIconWrench.i3d" adjustToGround="true"/>
+        <triggerMarker node="unloadTriggerMarker" filename="$data/shared/assets/marker/markerIconUnload.i3d" adjustToGround="true"/>
+    </triggerMarkers>
+    <hotspots>
+        <hotspot type="PRODUCTION_POINT" linkNode="unloadTriggerMarker" teleportNode="playerTriggerMarker"/>
+    </hotspots>
+    <lights>
+        <group weatherRequiredFlags="NIGHT"/>
+    </lights>
+	
+	<extendedProductionPoint>
+        <productions sharedThroughputCapacity="false">
+            <production id="PIG" name="Pig Processing" cyclesPerHour="1" costsPerActiveHour="2.0" >
+                <inputs>
+                    <input fillType="PIGS" amount="2">
+					</input>
+                </inputs>
+
+                <outputs>
+                    <output fillType="PORKMEAT" amount="500">
+                    </output>
+                </outputs>
+            </production>
+			
+			<production id="COW" name="Cow Processing" cyclesPerHour="1" costsPerActiveHour="2.0" >
+                <inputs>
+                    <input fillType="BEEF" amount="2">
+					</input>
+                </inputs>
+
+                <outputs>
+                    <output fillType="BEEFMEAT" amount="1000">
+                    </output>
+                </outputs>
+            </production>
+			
+			<production id="CHICKEN" name="Chicken Processing" cyclesPerHour="1" costsPerActiveHour="2.0" >
+                <inputs>
+                    <input fillType="POULTRY" amount="10">
+					</input>	
+                </inputs>
+
+                <outputs>
+                    <output fillType="POULTRYMEAT" amount="100">
+                    </output>
+                </outputs>
+            </production>
+			
+			<production id="SHEEPGOAT" name="Sheep/Goat Processing" cyclesPerHour="1" costsPerActiveHour="2.0" >
+                <inputs>
+                    <input fillType="SHEEPGOAT" amount="2">
+					</input>
+                </inputs>
+
+                <outputs>
+                    <output fillType="SHEEPGOATMEAT" amount="400">
+                    </output>
+                </outputs>
+            </production>
+        </productions>
+
+        <storage isExtension="false" fillLevelSyncThreshold="5">
+            <capacity fillType="PIGS" capacity="100" />
+            <capacity fillType="BEEF" capacity="100" />
+            <capacity fillType="POULTRY" capacity="500" />
+            <capacity fillType="SHEEPGOAT" capacity="100" />
+
+            <capacity fillType="PORKMEAT" capacity="15000" />
+            <capacity fillType="BEEFMEAT" capacity="15000" />
+            <capacity fillType="POULTRYMEAT" capacity="15000" />
+            <capacity fillType="SHEEPGOATMEAT" capacity="15000" />
+        </storage>
+
+        <animalInput triggerNode="animalTrigger" unloadSuccessText="message_unloadAnimalSuccess" unloadConfirmationText="message_unloadAnimalConfirmation" moveButtonText="button_moveAnimal" animalMinimumAgeText="message_animalTooYoung" animalMaximumAgeText="message_animalTooOld">
+            <animal type="PIG" 		fillType="PIGS" minimumAge="6" maximumAge="60"/>
+            <animal type="COW" 		fillType="BEEF" minimumAge="12" maximumAge="60"/>
+            <animal type="CHICKEN" 	fillType="POULTRY" minimumAge="6" maximumAge="60"/>
+            <animal type="SHEEP" 	fillType="SHEEPGOAT" minimumAge="14" maximumAge="60"/>
+        </animalInput>
+
+        <sellingStation node="sellingStation" stationName="Butcher Shop" appearsOnStats="false" allowMissions="false" supportsExtension="true" hideFromPricesMenu="true">
+            <unloadTrigger exactFillRootNode="unloadTrigger" fillTypes="PIGS BEEF POULTRY SHEEPGOAT"/>
+        </sellingStation>
+
+        <palletSpawner node="palletSpawner">
+            <spawnPlaces>
+                <spawnPlace startNode="spawnSpaceStart"/>
+            </spawnPlaces>
+        </palletSpawner>
+
+        <playerTrigger node="playerTrigger" />
+
+		<sounds>
+            <active template="raisinIdle" linkNode="0>" volumeScale="0.5"/>
+        </sounds>
+    </extendedProductionPoint>
+	
+    <i3dMappings>
+        <i3dMapping id="clearAreas" node="0>0"/>
+        <i3dMapping id="clearAreaStart" node="0>0|0"/>
+        <i3dMapping id="clearAreaHeight" node="0>0|0|0"/>
+        <i3dMapping id="clearAreaWidth" node="0>0|0|1"/>
+        <i3dMapping id="levelAreas" node="0>1"/>
+        <i3dMapping id="levelAreaStart" node="0>1|0"/>
+        <i3dMapping id="levelAreaHeight" node="0>1|0|0"/>
+        <i3dMapping id="levelAreaWidth" node="0>1|0|1"/>
+        <i3dMapping id="indoorAreas" node="0>2"/>
+        <i3dMapping id="indoorAreaStart" node="0>2|0"/>
+        <i3dMapping id="indoorAreaWidth" node="0>2|0|0"/>
+        <i3dMapping id="indoorAreaHeight" node="0>2|0|1"/>
+        <i3dMapping id="tipOcclusionUpdateAreas" node="0>3"/>
+        <i3dMapping id="tipOcclusionUpdateAreaStart" node="0>3|0"/>
+        <i3dMapping id="tipOcclusionUpdateAreaEnd" node="0>3|0|0"/>
+        <i3dMapping id="testAreas" node="0>4"/>
+        <i3dMapping id="testAreaStart" node="0>4|0"/>
+        <i3dMapping id="testAreaEnd" node="0>4|0|0"/>
+        <i3dMapping id="productionPoint" node="0>5"/>
+        <i3dMapping id="playerTrigger" node="0>5|0"/>
+        <i3dMapping id="infoTrigger" node="0>5|1"/>
+        <i3dMapping id="animalTrigger" node="0>5|2"/>
+        <i3dMapping id="sellingStation" node="0>5|3"/>
+        <i3dMapping id="unloadTrigger" node="0>5|3|0"/>
+        <i3dMapping id="unloadTriggerMarker" node="0>5|3|1"/>
+        <i3dMapping id="unloadTriggerAINode" node="0>5|3|2"/>
+        <i3dMapping id="palletSpawner" node="0>5|4"/>
+        <i3dMapping id="spawnSpaceStart" node="0>5|4|0"/>
+        <i3dMapping id="spawnSpaceEnd" node="0>5|4|0|0"/>
+        <i3dMapping id="playerTriggerMarker" node="0>5|5"/>
+        <i3dMapping id="warningStripes" node="0>5|6"/>
+        <i3dMapping id="warningStripes_loadUnloadArea" node="0>5|6|0"/>
+        <i3dMapping id="warningStripes_palletSpawnArea" node="0>5|6|1"/>
+    </i3dMappings>
+</placeable>

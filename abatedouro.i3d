@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="abatedouro.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="10.0.4"/>
+  </Asset>
+
+  <Files>
+    <File fileId="2" filename="$data/shared/warningStripes_diffuse.dds"/>
+    <File fileId="3" filename="$data/shared/warningStripes_normal.dds"/>
+    <File fileId="4" filename="$data/shared/warningStripes_specular.dds"/>
+    <File fileId="5" filename="Texturas/Concreto/Concrete_018_AmbientOcclusion.dds"/>
+    <File fileId="6" filename="Texturas/Concreto/Concrete_018_Normal.dds"/>
+    <File fileId="7" filename="Texturas/Concreto/Concrete_018_Roughness.dds"/>
+    <File fileId="11" filename="Texturas/Pedras alicerce/Substance_graph_AmbientOcclusion.dds"/>
+    <File fileId="12" filename="Texturas/Pedras alicerce/Substance_graph_Normal.dds"/>
+    <File fileId="13" filename="Texturas/Pedras alicerce/Substance_graph_Roughness.dds"/>
+    <File fileId="18" filename="Texturas/logo.dds"/>
+    <File fileId="14" filename="Texturas/madeira e metal/Substance_graph_ambientOcclusion.dds"/>
+    <File fileId="15" filename="Texturas/madeira e metal/Substance_graph_normal.dds"/>
+    <File fileId="16" filename="Texturas/madeira e metal/Substance_graph_roughness.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="Alicerce" materialId="5">
+      <Texture fileId="11"/>
+      <Normalmap fileId="12"/>
+      <Glossmap fileId="13"/>
+    </Material>
+    <Material name="Cinza" materialId="6" diffuseColor="0.0784314 0.0784314 0.0784314 1" specularColor="0.501961 1 0">
+    </Material>
+    <Material name="Concreto" materialId="7">
+      <Texture fileId="5"/>
+      <Normalmap fileId="6"/>
+      <Glossmap fileId="7"/>
+    </Material>
+    <Material name="lambert1" materialId="8" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+    <Material name="logo" materialId="9" emissiveColor="1 1 1 1" specularColor="0.501961 1 0" alphaBlending="true">
+      <Texture fileId="18"/>
+    </Material>
+    <Material name="Material" materialId="10" diffuseColor="0.8 0.8 0.8 1" specularColor="0.501961 1 0">
+    </Material>
+    <Material name="Porta" materialId="11">
+      <Texture fileId="14"/>
+      <Normalmap fileId="15"/>
+      <Glossmap fileId="16"/>
+    </Material>
+    <Material name="Red" materialId="12" diffuseColor="0.8 0.00392157 0.00392157 1" specularColor="0.501961 1 0">
+    </Material>
+    <Material name="warningStripes_mat" materialId="13">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="abatedouro.i3d.shapes">
+  </Shapes>
+
+  <Scene>
+    <TransformGroup name="abatedouro" nodeId="23">
+      <TransformGroup name="clearAreas" translation="5 0 10" nodeId="24">
+        <TransformGroup name="clearAreaStart" nodeId="25">
+          <TransformGroup name="clearAreaHeight" translation="-1 0 -20" nodeId="26"/>
+          <TransformGroup name="clearAreaWidth" translation="-10 0 -19" nodeId="27"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="levelAreas" translation="5 0 10" nodeId="28">
+        <TransformGroup name="levelAreaStart" nodeId="29">
+          <TransformGroup name="levelAreaHeight" translation="-1 0 -20" nodeId="30"/>
+          <TransformGroup name="levelAreaWidth" translation="-10 0 -19" nodeId="31"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="indoorAreas" translation="4 0 6" nodeId="32">
+        <TransformGroup name="indoorAreaStart" nodeId="33">
+          <TransformGroup name="indoorAreaWidth" translation="0 0 -12" nodeId="34"/>
+          <TransformGroup name="indoorAreaHeight" translation="-8 0 -12" nodeId="35"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="tipOcclusionUpdateAreas" translation="5 0 10" nodeId="36">
+        <TransformGroup name="tipOcclusionUpdateAreaStart" nodeId="37">
+          <TransformGroup name="tipOcclusionUpdateAreaEnd" translation="-11 0 -20" nodeId="38"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="testAreas" translation="5 0 10" nodeId="39">
+        <TransformGroup name="testAreaStart" nodeId="40">
+          <TransformGroup name="testAreaEnd" translation="-11 0 -20" nodeId="41"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="productionPoint" nodeId="42">
+        <Shape name="playerTrigger" translation="-2.5 1.6 7" shapeId="1" static="true" trigger="true" collisionFilterGroup="0x3e" collisionFilterMask="0xfffffbff" nodeId="43" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="8"/>
+        <Shape name="infoTrigger" translation="-2.73496 0.805533 6.33553" rotation="-180 0 -180" scale="0.1 0.5 0.01" shapeId="2" static="true" trigger="true" collisionFilterGroup="0x3e" collisionFilterMask="0xfffffbff" nodeId="44" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="8"/>
+        <Shape name="animalTrigger" translation="-1 1 -9.6" rotation="-180 0 -180" scale="2 1 2" shapeId="3" static="true" trigger="true" collisionFilterGroup="0x20000000" collisionFilterMask="0x110000" nodeId="45" castsShadows="false" receiveShadows="false" nonRenderable="true" distanceBlending="false" materialIds="8"/>
+        <TransformGroup name="sellingStation" translation="0 0 -8.29211" nodeId="46">
+          <Shape name="unloadTrigger" translation="0 0.3 0" scale="1 1.3 0.5" shapeId="4" static="true" trigger="true" collisionFilterGroup="0x60000000" collisionFilterMask="0x20000000" nodeId="47" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="8"/>
+          <TransformGroup name="unloadTriggerMarker" nodeId="48"/>
+          <TransformGroup name="unloadTriggerAINode" nodeId="49"/>
+        </TransformGroup>
+        <TransformGroup name="palletSpawner" translation="0.958407 0 7.92863" nodeId="50">
+          <TransformGroup name="spawnSpaceStart" translation="-5.04059 0 0" nodeId="51">
+            <TransformGroup name="spawnSpaceEnd" translation="8.34316 2.38419e-07 0" nodeId="52"/>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="playerTriggerMarker" nodeId="53"/>
+        <TransformGroup name="warningStripes" nodeId="54">
+          <Shape name="warningStripes_loadUnloadArea" translation="0 0 -7.74683" scale="0.5 1 0.5" shapeId="5" clipDistance="300" nodeId="55" castsShadows="true" receiveShadows="true" materialIds="13"/>
+          <Shape name="warningStripes_palletSpawnArea" translation="0.95 0 8.06903" shapeId="6" clipDistance="300" nodeId="56" castsShadows="true" receiveShadows="true" materialIds="13"/>
+        </TransformGroup>
+      </TransformGroup>
+      <Shape name="predio" translation="0 1.9 0" shapeId="7" nodeId="57" castsShadows="true" receiveShadows="true" materialIds="7,6,10,5,11,12">
+        <Shape name="logo" translation="-2.60747 0.329494 6.04043" rotation="90 -0 0" scale="2.5 1 2.5" shapeId="8" nodeId="58" castsShadows="true" receiveShadows="true" materialIds="9"/>
+      </Shape>
+    </TransformGroup>
+  </Scene>
+
+</i3D>
